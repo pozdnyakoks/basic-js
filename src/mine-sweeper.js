@@ -24,38 +24,39 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]
  */
 function minesweeper(matrix) {
-  // let arr = [];
-  // let row = [];
-  // let num = 0;
+  let arr = [];
+  let row = [];
+  let num = 0;
+
   for (let i = 0; i < matrix.length; i++) {
-    // row = []
+    row = []
     for (let j = 0; j < matrix[0].length; j++) {
-      if (matrix[i][j] == '') {
+      if (matrix[i][j] === '') {
         return
       } else {
-        // num = 0;
+        num = 0;
         if (j > 0 && matrix[i][j - 1] == true) {
           num++;
-        } 
+        }
         if (i > 0 && j > 0 && matrix[i - 1][j - 1] == true) {
           num++;
-        } 
-         if (i > 0 && matrix[i - 1][j] == true) {
+        }
+        if (i > 0 && matrix[i - 1][j] == true) {
           num++;
-        } 
-         if (i > 0 && j < matrix[0].length - 1 && matrix[i - 1][j + 1] == true) {
+        }
+        if (i > 0 && j < matrix[0].length - 1 && matrix[i - 1][j + 1] == true) {
           num++;
-        } 
-         if (j < matrix[0].length - 1 && matrix[i][j + 1] == true) {
+        }
+        if (j < matrix[0].length - 1 && matrix[i][j + 1] == true) {
           num++;
-        } 
-         if (i < matrix.length - 1 && j < matrix[0].length - 1 && matrix[i + 1][j + 1] == true) {
+        }
+        if (i < matrix.length - 1 && j < matrix[0].length - 1 && matrix[i + 1][j + 1] == true) {
           num++;
-        } 
-         if (i < matrix.length - 1 && matrix[i + 1][j] == true) {
+        }
+        if (i < matrix.length - 1 && matrix[i + 1][j] == true) {
           num++;
-        } 
-         if (j > 0 && i < matrix.length - 1 && matrix[i + 1][j - 1] == true) {
+        }
+        if (j > 0 && i < matrix.length - 1 && matrix[i + 1][j - 1] == true) {
           num++;
         }
         row.push(num)
@@ -65,6 +66,7 @@ function minesweeper(matrix) {
   }
   return arr;
 }
+
 
 
 module.exports = {
